@@ -44,12 +44,18 @@ A Power is a structured capability that understands a goal, reads relevant conte
 ### Project Structure
 ```text
 /specs/          # Design blueprints
-/powers/         # Reusable AI instructions
+POWERS>md        # Reusable AI instructions
 /posts/          # Documentation and updates
 ```
 
+Source documentation:
+
+https://kiro.dev/docs/powers/create/
+
+
+
 ### Defining a Power
-Powers are typically written as structured Markdown:
+Powers are typically written as structured Markdown, in a `POWERS.md` file:
 
 > **# refactor-api-layer**
 >
@@ -60,6 +66,35 @@ Powers are typically written as structured Markdown:
 > 2. Move business logic into `/services`.
 > 3. Update imports.
 > 4. Ensure tests pass.
+
+---
+
+Note: The following info comes from the kiro.dev powers documentation
+
+### What You Need
+
+Every power requires a `POWER.md` file. You can also include optional components:
+
+* `mcp.json` — configuration for MCP server tool integrations
+* `steering/` — workflow-specific guidance files
+
+---
+
+
+### Creating `POWER.md`
+
+Your `POWER.md` file should contain two main sections:
+
+1. **Frontmatter**
+2. **Agent instructions**
+
+For the instructions, it’s best to structure them as:
+
+* **Onboarding steps** (e.g., installing CLI tools, setting up hooks)
+* **Steering guidance** (workflows, best practices, and operational rules)
+
+If your power is more complex, consider splitting the guidance into multiple files within the `steering/` directory.
+
 
 ### Why Kiro Powers?
 Modern AI tools are powerful but unstructured. Kiro Powers introduces **consistency** and **reusability**. It turns "chatting with an AI" into a **composable development workflow**. It is best used when you want your design and code to stay perfectly aligned while reusing logic patterns across multiple projects.
